@@ -69,6 +69,34 @@
   }
   .login-link:hover { background: var(--green-100); }
 
+  .helpline-strip {
+    background: var(--gold-bg);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .helpline-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0.7rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+  .helpline-icon { font-size: 15px; }
+  .helpline-text {
+    font-size: 13.5px;
+    color: var(--green-900);
+  }
+  .helpline-number {
+    font-weight: 700;
+    color: var(--gold-dark);
+    text-decoration: none;
+  }
+  .helpline-number:hover { text-decoration: underline; }
+
   .hero {
     max-width: 1100px;
     margin: 0 auto;
@@ -743,6 +771,12 @@ body:has(.kq-login-brand) .field-panel{
 <a class="login-link" href="#" onclick="return goStaff()">Staff login</a>
 </div>
 </div>
+<div class="helpline-strip">
+<div class="helpline-inner">
+<span class="helpline-icon">📞</span>
+<span class="helpline-text" id="helplineText">Unable to log in or register? Call our farmer helpline (toll-free): <a class="helpline-number" href="tel:18001234567">1800-123-4567</a></span>
+</div>
+</div>
 <div class="hero">
 <div class="hero-copy">
 <span class="hero-eyebrow">SIH26032 · Procurement made simple</span>
@@ -790,7 +824,8 @@ body:has(.kq-login-brand) .field-panel{
 </div>
 </div>
 <footer>
-    SIH26032 · Farmer Procurement Portal — a project for smoother, fairer procurement.
+    SIH26032 · Farmer Procurement Portal — a project for smoother, fairer procurement.<br/>
+    Farmer helpline (toll-free): <a class="helpline-number" href="tel:18001234567">1800-123-4567</a>
   </footer>
 <script>
   function goToPage(url) {
@@ -809,11 +844,13 @@ body:has(.kq-login-brand) .field-panel{
       document.querySelector('.hero-sub').textContent = 'अब घंटों लाइन में खड़े होने की ज़रूरत नहीं। स्लॉट बुक करें, टोकन पाएं, और अपनी स्थिति ट्रैक करें — अपने फोन से।';
       document.getElementById('startBookingBtn').textContent = 'बुकिंग शुरू करें →';
       document.getElementById('checkStatusBtn').textContent = 'मेरी स्थिति देखें';
+      document.getElementById('helplineText').innerHTML = 'लॉगिन या रजिस्टर करने में परेशानी? हमारी किसान हेल्पलाइन (टोल-फ्री) पर कॉल करें: <a class="helpline-number" href="tel:18001234567">1800-123-4567</a>';
     } else {
       document.querySelector('.hero-title').textContent = 'Book your procurement slot. Skip the wait.';
       document.querySelector('.hero-sub').textContent = 'No more standing in line for hours without knowing when your turn will come. Book a slot, get a token, and track your status — all from your phone.';
       document.getElementById('startBookingBtn').textContent = 'Start booking →';
       document.getElementById('checkStatusBtn').textContent = 'Check my status';
+      document.getElementById('helplineText').innerHTML = 'Unable to log in or register? Call our farmer helpline (toll-free): <a class="helpline-number" href="tel:18001234567">1800-123-4567</a>';
     }
   });
 </script>
